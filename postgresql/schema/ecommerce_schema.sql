@@ -16,6 +16,7 @@ CREATE TABLE clients (
 CREATE TABLE produits (
     produit_id SERIAL PRIMARY KEY,
     nom VARCHAR(150) NOT NULL,
+    famille VARCHAR(100),
     categorie VARCHAR(100),
     prix NUMERIC(10,2) NOT NULL,
     stock INT DEFAULT 0
