@@ -21,27 +21,7 @@ Entités principales
 
 - Auteur
   - id (clé primaire)
-  - nom
-  - nationalité
-
-- Étudiant
-  - id (clé primaire)
-  - nom
-  - prénom
-  - email
-  - cursus_id (clé étrangère vers Cursus)
-
-- Cursus
-  - id (clé primaire)
-  - nom
-  - responsable
-
-- Emprunt
-  - id (clé primaire)
-  - livre_id (clé étrangère vers Livre)
-  - etudiant_id (clé étrangère vers Étudiant)
-  - date_emprunt
-  - date_retour
+  - ...
 
 ---
 
@@ -67,38 +47,14 @@ Utilisez [dbdiagram.io](https://dbdiagram.io/home) — un outil gratuit et intui
 ```sql
 Table livre {
   id int [pk]
-  titre varc`har
+  titre varchar
   année_publication int
   auteur_id int [ref: > auteur.id]
 }
 
 Table auteur {
   id int [pk]
-  nom varchar
-  nationalité varchar
-}
-
-Table etudiant {
-  id int [pk]
-  nom varchar
-  prénom varchar
-  email varchar
-  departement_id int [ref: > departement.id]
-}
-
-Table cursus {
-  id int [pk]
-  nom varchar
-  responsable varchar
-}
-
-Table emprunt {
-  id int [pk]
-  livre_id int [ref: > livre.id]
-  etudiant_id int [ref: > etudiant.id]
-  date_emprunt date
-  date_retour date
-}
+  ...}
 ```
 
 ---
